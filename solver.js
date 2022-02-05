@@ -7,12 +7,7 @@ const readInterface = readline.createInterface({
 });
 const input = require('./input.json');
 
-let everything = new Set();
-const map = new Array(26);
-for (let i = 0; i < map.length; i++) {
-    map[i] = new Set();
-}
-let offset = 'a'.charCodeAt(0);
+
 readInterface.on('line', (line) => {
     for (const c of line) {
         map[c.charCodeAt(0) - offset].add(line);
@@ -20,6 +15,9 @@ readInterface.on('line', (line) => {
     everything.add(line);
 });
 readInterface.on('close', () => {
+});
+
+function solve (input){
     let sets = [];
     for (const {key, exists} of input) {
         if (exists) {
@@ -112,5 +110,5 @@ readInterface.on('close', () => {
             }
         }
     }
-    console.log([...recommended].sort((a,b) => b[1]-a[1]));
-})
+    return [...recommended].sort((a,b) => b[1]-a[1]);
+}
