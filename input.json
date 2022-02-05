@@ -1,0 +1,32 @@
+[
+    {   
+        "key": "t",
+        "exists": true,
+        "positions": [1,0,0,0,0]
+    },
+    {   
+        "key": "e", 
+        "exists": true,
+        "positions": [0,-1,1,0,0]
+    },
+    {   
+        "key": "a", 
+        "exists": true,
+        "positions": [0,0,-1,1,0]
+    },
+    {   
+        "key": "r",
+        "exists": true,
+        "positions": [0,1,0,-1,0]
+    },
+    {   
+        "key": "s", 
+        "exists": false,
+        "positions": [0,0,-1,0,0]
+    },
+    {   
+        "key": "d", 
+        "exists": false,
+        "positions": [0,0,-1,0,0]
+    }
+]
