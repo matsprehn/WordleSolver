@@ -137,11 +137,6 @@ async function playGame() {
                     map.set(letter, obj);
                 }
             }
-            for ([key,value] of map.entries()) {
-                if (value.exists === undefined) {
-                    value.exists = false;
-                }
-            }
         }
         return [...map.values()];
     }
