@@ -124,15 +124,22 @@ async function playGame() {
                 if (acc === 'absent') acc = -2;
                 if (acc === 'present') acc = -1;
                 if (acc === 'correct') acc = 1;
-                if (acc == -2) {
-                    map.set(letter, {key: letter, exists: false, positions:[]});
-                }
                 if (map.has(letter)) {
+                    if (letter == 'r') console.log({letter, i, positions: map.get(letter).positions});
                     map.get(letter).positions[i] = acc;
+                    if (letter == 'r') console.log({letter, i, positions: map.get(letter).positions});
                 } else {
-                    let obj = {key: letter, exists:true, positions: [0,0,0,0,0]};
-                    obj.positions[i] = acc;
+                    let obj = {key: letter, positions: [0,0,0,0,0]};
+                    if (acc > -2) {
+                        obj.positions[i] = acc;
+                        obj.exists = true;
+                    }
                     map.set(letter, obj);
+                }
+            }
+            for ([key,value] of map.entries()) {
+                if (value.exists === undefined) {
+                    value.exists = false;
                 }
             }
         }
